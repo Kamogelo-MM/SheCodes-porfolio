@@ -1,0 +1,205 @@
+@media (max-width: 500px) {
+  .half-homepage {
+    margin-top: -210px;
+  }
+}
+@media (min-width: 700px) {
+  .half-homepage,
+  .contactH1 {
+    margin-top: -50px;
+  }
+  .wrapper,
+  .contactH1 {
+    margin-left: 239px;
+    margin-right: -190px;
+  }
+}
+
+h1 {
+  font-family: "Kdam Thmor Pro", sans-serif;
+}
+h3 {
+  font-family: "Raleway", sans-serif;
+}
+a {
+  font-size: 20px;
+  text-align: center;
+  color: #555;
+  margin-bottom: 0.6em;
+}
+a:hover {
+  color: #d8d8d8;
+}
+li {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+  text-align: left;
+}
+hr {
+  height: 1px;
+  background: white;
+  border: none;
+  outline: none;
+  margin: 3em 3em 5em;
+  position: relative;
+
+  &:before {
+    content: attr(data-symbol);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    background: black;
+    color: white;
+    padding: 0.5em 3em;
+    @include transform(translate(-50%, -50%));
+  }
+}
+
+.sheCode_sentence {
+  text-align: left;
+}
+
+.projectPage {
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.shecodes_alumni {
+  font-size: 35px;
+}
+* {
+  box-sizing: border-box;
+}
+.about-h1 {
+  margin-top: 30px;
+}
+.card {
+  background: black;
+}
+.card-text {
+  color: white;
+}
+.card-title {
+  color: white;
+  text-decoration: underline;
+}
+.about-card {
+  border: 1px solid rgba(255, 255, 255, 0.363);
+  background-color: rgba(255, 255, 255, 0.263);
+  padding: 20px 12px;
+  border-radius: 15px 15px;
+  font-size: 20px;
+}
+
+.contactH1 {
+  margin-top: -180px;
+  text-align: center;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 90deg;
+  inherits: true;
+}
+
+@property --gradX {
+  syntax: "<percentage>";
+  initial-value: 50%;
+  inherits: true;
+}
+
+@property --gradY {
+  syntax: "<percentage>";
+  initial-value: 0%;
+  inherits: true;
+}
+
+.homepage,
+.aboutPage,
+.projectPage,
+.contactPage {
+  text-align: center;
+  margin: 0;
+  padding: 1rem;
+  background-color: rgba(10, 12, 18, 1);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  margin: 0 auto;
+  display: block;
+}
+
+:root {
+  --d: 2500ms;
+  --angle: 90deg;
+  --gradX: 100%;
+  --gradY: 50%;
+  --c1: rgba(168, 239, 255, 1);
+  --c2: rgba(168, 239, 255, 0.1);
+}
+
+.wrapper {
+  min-width: min(10rem, 100%);
+}
+
+.box {
+  margin: max(1rem, 3vw);
+  border: 0.35rem solid;
+  padding: 3vw;
+  border-image: conic-gradient(
+      from var(--angle),
+      var(--c2),
+      var(--c1) 0.1turn,
+      var(--c1) 0.15turn,
+      var(--c2) 0.25turn
+    )
+    30;
+  animation: borderRotate var(--d) linear infinite forwards;
+}
+
+.box:nth-child(2) {
+  border-image: radial-gradient(
+      ellipse at var(--gradX) var(--gradY),
+      var(--c1),
+      var(--c1) 10%,
+      var(--c2) 40%
+    )
+    30;
+  animation: borderRadial var(--d) linear infinite forwards;
+}
+
+@keyframes borderRotate {
+  100% {
+    --angle: 420deg;
+  }
+}
+
+@keyframes borderRadial {
+  20% {
+    --gradX: 100%;
+    --gradY: 50%;
+  }
+  40% {
+    --gradX: 100%;
+    --gradY: 100%;
+  }
+  60% {
+    --gradX: 50%;
+    --gradY: 100%;
+  }
+  80% {
+    --gradX: 0%;
+    --gradY: 50%;
+  }
+  100% {
+    --gradX: 50%;
+    --gradY: 0%;
+  }
+}
