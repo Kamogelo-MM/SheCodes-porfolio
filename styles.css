@@ -56,7 +56,15 @@ hr {
     @include transform(translate(-50%, -50%));
   }
 }
-
+hr#two {
+  background: transparent;
+  border-bottom: 2px dashed white;
+  width: 40%;
+  margin: 0 auto;
+}
+footer {
+  margin-top: 10px;
+}
 .sheCode_sentence {
   text-align: left;
 }
@@ -72,9 +80,7 @@ hr {
 * {
   box-sizing: border-box;
 }
-.about-h1 {
-  margin-top: 30px;
-}
+
 .card {
   background: black;
 }
@@ -91,6 +97,8 @@ hr {
   padding: 20px 12px;
   border-radius: 15px 15px;
   font-size: 20px;
+  margin-top: -25px;
+  margin-bottom: 20px;
 }
 
 .contactH1 {
@@ -118,7 +126,8 @@ hr {
 .homepage,
 .aboutPage,
 .projectPage,
-.contactPage {
+.contactPage,
+.infoPage {
   text-align: center;
   margin: 0;
   padding: 1rem;
